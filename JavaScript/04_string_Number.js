@@ -12,7 +12,7 @@ console.log(parseInt(num)); // it's parse while it's not geting non-numeric char
 let num1 = "25.83tr78"
 console.log(parseFloat(num1)); // it's parse while it's not geting non-numeric character
 
-// Unary pluse operator (+)
+// Unary plus operator (+)
 let num2 = "345" // "345tu"  it's parse all string untile geting first non-numeric character.
 console.log(+num2);
 
