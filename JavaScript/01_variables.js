@@ -21,13 +21,14 @@ console.log(lastName);// pandu
 lastName = "Mohammad" 
 console.log(lastName); // Mohammad
 
+// Block scope
 {
     console.log(lastName); // Mohammad
    var lastName = "Bisoi"
    console.log(lastName); // Bisoi
 }
-lastName = "Sahoo";
-console.log(lastName); // Sashoo
+console.log(lastName); //👉 Here is an error this line of code should print the Output: Mohammad but insted of this it access the block sope variable value this thing have problems. 
+
 
 
 // Without using keyword declar variable (Which is not preferable)
