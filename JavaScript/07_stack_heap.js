@@ -1,8 +1,8 @@
 // Memory are 2 type 
 
 
-// Stack (Primitive) :- Get copy of variable value
-// Heap (Not-primitive) :- You get referance
+// Stack (Primitive) :- Get copy of variable value [string , number , boolean , null , undefined , symbol, bigInt]
+// Heap (Not-primitive) :- You get referance [ Array , object , function]
 
 
 // *******************************  Stack ******************************************
