@@ -100,8 +100,89 @@ console.log(str8.indexOf("T")); // 8  it give the index of first occurance of su
   console.log(Array.from(result)); // create a new instance of array or shallow copy
 
 
-  // 11.
+  /*  output:
+
+  [
+  [
+    'Javascript',
+    index: 0,
+    input: 'Javascript is a most powerfull programming language . Javascript is user for interactive Website devlopment.',
+    groups: undefined
+  ],
+  [
+    'Javascript',
+    index: 54,
+    input: 'Javascript is a most powerfull programming language . Javascript is user for interactive Website devlopment.',
+    groups: undefined
+  ]
+]
+  */
+
+  // 11. repeat() - method return a new string by repeating given string in a specified time .
+
+  let str11 = "Tufan";
+
+  console.log(str11.repeat(5)); //TufanTufanTufanTufanTufan
+
+  // 12. replace() - method return new string with replaced string /regex .
+
+  let str12 = "java is Dynamically typed language , javascript is staticly typed language.";
+
+  let pattern = "Java"
+  console.log(str12.replace(pattern , "Javascript"));
+
+  let patternTwo = /Javascript/;
+
+  console.log((str12.replace(patternTwo , "Java")));
 
 
- 
+//13. replaceAll() - method return new string with replaced all matched pattern with replacement.
 
+  let patternThree = /t/g; // without  g-flag it's throw error
+console.log(str12.replaceAll("t" , "T"));
+
+
+// 14.  search() - method return match between given string and regular expression.
+
+   let patternFour = /[A-Z]/g;
+
+   console.log(str12.search(patternFour));
+
+// 15. slice() - method extract and return section of a string.
+
+let str13 = "Javascript is most widely used language";
+
+console.log(str13.slice(9)); //you can pass single parameter
+console.log(str13.slice(0,10)); // for getin substring give two parameter.
+
+
+//16. split() - method divide a string into a list of substring and return them as an array.
+
+
+console.log(str13.split(" "));
+
+// 17. startsWith() and endsWith() - This method check the given string is start or end with specified char or not . It's return true or false.
+
+console.log(str13.startsWith("J")); // true
+
+console.log(str13.startsWith("j")); // false   case sencitive.
+
+console.log(str13.endsWith("e")); // true
+console.log(str13.endsWith("E")); // false
+
+ // 18.  substring() - method return a specfied part of a string  between strt and end index
+
+ let str14 = "I love javascript";
+
+ console.log(str14.substring(0, 8));
+
+// 19. toLowerCase() and toUpperCase() - method convert string to lowercase or uppercase.
+
+ console.log(str14.toLowerCase()); // i love javascript
+ console.log(str14.toUpperCase()); // I LOVE JAVASCRIPT
+
+ // 20. trim() - this method remove white space form both end of the string.
+
+ let str15 = "     Javascript is for web interactivity      ";
+ console.log(str15);
+ console.log(str15.trim());
