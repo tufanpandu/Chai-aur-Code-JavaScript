@@ -1,0 +1,76 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    width:100vw;
+    background-color:#5A5A5A;
+    color:#fff;
+    display: flex;
+    align-items:center;
+    justify-items:center;
+    text-align: center;
+    flex-direction: column;
+}
+
+h1{
+    font-weight: 500;
+}
+
+nav h1{
+    background-color: #000;
+    width:100vw;
+    height:2em;
+    padding-top:0.5em;
+    font-size:2rem;
+
+}
+
+#hero p{
+   line-height: 3rem;
+   font-size:1.2rem;
+}
+
+
+#hero h1{
+    font-size:3.5rem;
+    margin-top:1.5em;
+}
+
+
+#inputNum{
+    height:3em;
+    width:15em;
+    display: block;
+    margin: auto;
+    border:5px solid rgba(70, 70, 68, 0.76);
+    text-align:center;
+    font-size:1.5rem;
+    font-weight: 700;
+}
+
+.result{
+    width:auto;
+    height: 40px;
+    display: block;
+    margin: auto;
+    color:rgb(233, 245, 9);
+}
+
+#newGame{
+    cursor:pointer;
+    background-color: red;
+}
+
+#submit{
+    margin-top:0.7em;
+    font-size:1.3rem;
+    padding:16px 40px;
+    border-radius:14px;
+    background-color: #454545;
+    color:#ffff;
+    border:none;
+}
