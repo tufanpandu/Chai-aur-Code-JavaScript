@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Code with Project</title>
+</head>
+<body>
+    <h1>Namaste Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let i = 0;
+    function time(){
+        i += 1;
+        console.log(i)
+    }
+   let interval; 
+   // update the interval variablee
+    interval =  setInterval(time, 1000)
+
+// when click the start button update the interval variable.
+   document.querySelector("#start").addEventListener("click", ()=>{
+        interval = setInterval(time,1000)
+
+   })
+document.querySelector("#stop").addEventListener("click", ()=>{
+  clearInterval(interval)
+})
+</script>
+</html>

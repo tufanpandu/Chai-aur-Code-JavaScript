@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Event</title>
+</head>
+<body style="background-color: #454545; color:white">
+    <h2>HTML Events </h2>
+    <div>
+        <ul style="list-style: none;" id="images">
+            <li><img width="150px" src="https://images.pexels.com/photos/206676/pexels-photo-206676.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" id="owl"></li>
+            <li><img width="150px" src="https://images.pexels.com/photos/58997/pexels-photo-58997.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" id="dog"></li>
+            <li><img width="150px" src="https://images.pexels.com/photos/11035371/pexels-photo-11035371.jpeg?auto=compress&cs=tinysrgb&w=600" alt="html"></li>
+            <li><img width="150px" src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" id="car"></li>
+            <li><a style="color:aliceblue" href="http://google.com" id="google">Google</a></li>
+
+        </ul>
+    </div>
+    <div>
+        <P id="type">Hello Tufan</P>
+
+        <p>timestamp: <span id="time">-</span></p>
+    </div>
+
+    <div id="deligation"> 
+        <button>Tufan</button>
+        <button>Rashi</button>
+        <button>Tina</button>
+        <button>Chinu</button>
+        <button>Asha</button>
+    </div>
+</body>
+<script>
+    // attachEvent()
+    //jQuery - on
+    // type, timestamp , defaultPrevented , target
+    // toElement , srcElement , currentTarget 
+    // clientX , clientY , screenY , screenX
+    // altkey, ctrlKey, shiftkey , keyCode
+
+
+    // Event propogation - Event bubling(false) by  , Event capturing(true)
+    // document.getElementById("images").addEventListener("click" , function(e){
+    //     console.log("Click inside the ul")
+    // }, false)
+    
+    // document.getElementById("owl").addEventListener("click" , function(e){
+    //     console.log("Owl clicked")
+    //     e.stopPropagation()
+    // }, false)
+
+    // document.getElementById("google").addEventListener("click" , function(e){
+    //     console.log("Google click")
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    // }, false)
+
+
+
+
+    document.querySelector("#images").addEventListener("click" , function(e){
+        e.preventDefault();
+        e.stopPropagation()
+       // console.log(e.target.parentNode)
+       console.log(e.target.tagName)
+       if(e.target.tagName === "IMG"){
+           let removeIt = e.target.parentNode
+           removeIt.remove()
+       }
+    }, false);
+
+
+
+    // Event type
+
+    function getEventType(e){
+        const type = document.getElementById("type");
+        
+        type.innerText = `${e.type} ${type.innerText}`
+    }
+
+    document.addEventListener("keydown", getEventType,false);
+    document.addEventListener("keypress", getEventType,false);
+// window.addEventListener("load", ()=>{
+//         document.write("page load successfully.")
+//     },false)
+
+    // window.addEventListener("resize", ()=>{
+    //     document.write("page resize successfully.")
+    // },false)
+
+
+    document.body.addEventListener("keypress",(e)=>{
+        const time = document.querySelector("#time");
+          let fix = Math.floor(e.timeStamp.toFixed(0)/1000 ) 
+         time.innerText = `${fix}`
+    })
+
+
+
+    //event Deligation
+
+    document.querySelector("#deligation").
+    addEventListener("click", function(e){
+    
+         if(e.target.nodeName === "BUTTON"){
+            console.log(e.target.innerText)
+            e.target.innerText = `You clicked ${e.target.innerText}`
+         }
+    })
+
+</script>
+</html>

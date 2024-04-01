@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Code with Project</title>
+</head>
+<body>
+    <h1>Namaste Tufan</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+ const sayTufan = function(){
+    document.querySelector("h1").innerHTML = `Best Javascript serice in the world`
+ }
+const changeName = setTimeout(sayTufan, 5000);
+document.querySelector("#stop").addEventListener("click", ()=>{
+    clearTimeout(changeName);
+})
+</script>
+</html>
