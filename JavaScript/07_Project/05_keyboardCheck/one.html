@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Check</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        table , tr , td, th{
+           border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+          <th>keydown</th>
+          <th>keycode</th>
+          <th>code</th>
+        </tr>
+        <tr>
+          <td id="keydown"></td>
+          <td id="keycode"></td>
+          <td id="code"></td>
+        </tr>
+        
+      </table>
+    
+</body>
+<script>
+    let keydown = document.querySelector("#keydown");
+    let keycode = document.querySelector("#keycode");
+    let code = document.querySelector("#code");
+    
+    window.addEventListener("keydown", (e)=>{
+
+        keydown.innerHTML = `${e.key == " " ? "Space": e.key}`;
+        keycode.innerHTML = `${e.keyCode}`;
+        code.innerHTML = `${e.code}`
+    })
+
+
+    
+</script>
+</html>
