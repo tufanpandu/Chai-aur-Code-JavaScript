@@ -1,0 +1,80 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 80vh;
+    background-color: #211951;
+    color:#ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#inputBox{
+    display: flex;
+    flex-direction:column;   
+}
+
+#submit{
+    display: block;
+    margin:10px auto;
+    padding:10px;
+    width:8em;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 16px;
+    border:none;
+    background-color:#15F5BA ;
+    color:#211951;
+    cursor:pointer;
+}
+
+#url{
+    display: block;
+    margin: auto;
+    padding:10px;
+    width:23em;
+}
+
+#card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:300px;
+    width:350px;
+    background-color:#836FFF;
+    padding: 10px;
+    border-radius: 12px;   
+}
+
+#circle{
+    width:125px;
+    height:125px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: relative;
+    left:90px;
+    margin-bottom: 10px;
+
+}
+
+#card p{
+    font-size: 1.2rem;
+    line-height: 33px;   
+    color:#211951;
+    font-family: helvetica, sans-serif; 
+}
+
+#name, #id, #location , #followers{
+    color:#ece517;
+    font-weight: 700;
+}
+

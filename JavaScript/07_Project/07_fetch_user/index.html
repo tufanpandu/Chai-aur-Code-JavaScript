@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch User Details</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div>
+        <h2>Fetch Github User Details</h2>
+        <div id="inputBox">
+            <input type="text" name="url" id="url" placeholder="Enter Github user name.">
+            <button id="submit">Submit</button>
+        </div>
+
+        <div id="card">
+             <img src="https://cdn.pixabay.com/photo/2016/08/31/11/54/icon-1633249_1280.png" alt="user" id="circle">
+            <p>Name: <span id="name"></span></p>
+            <p>Login ID: <span id="id"></span></p>
+            <p>Location: <span id="location"></span></p>
+            <p>Followers: <span id="followers"></span></p>
+        </div>
+        
+
+    </div>
+    <script src="./fetch.js"></script>
+</body>
+</html>
