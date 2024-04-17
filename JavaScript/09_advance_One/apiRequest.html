@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR - XML Http Request</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: #454545;
+        }
+
+        #btn{
+            padding:10px 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            border:none;
+            cursor:pointer;
+            margin-top:10px;
+        }
+        #result{
+            color:#ffff;
+            font-size: 1.2rem;
+        }
+
+        #input{
+            padding:10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Get Json Data from Github API</h1>
+    <input type="text" id="input">
+    <button id="btn">Get Data</button>
+    <p id="result"></p>
+    
+</body>
+<script>
+    const btn = document.querySelector("#btn");
+
+
+    function fetchUserData(fullUrl){
+         const xhr = new XMLHttpRequest();
+         xhr.open("GET" , fullUrl);
+         xhr.onreadystatechange  = function(){
+             if(this.readyState === xhr.DONE){
+                  let data = this.responseText;
+                  if(this.status === 200){
+                    document.querySelector("#result").innerHTML = `${data}`
+                  }else if(this.status === 404){
+                     alert("Get Error")
+                  }else{
+                    alert("Some error occurs.")
+                  }
+             };
+         };
+         xhr.send();
+    }
+
+
+    btn.addEventListener("click" , (e)=>{
+        let url = document.querySelector("input").value.trim();
+        console.log(url)
+
+        if(url !== " " && url.length < 0){
+            alert("Enter valid details.")
+        }else{
+            let fullUrl = `https://api.github.com/users/${url}`;
+            fetchUserData(fullUrl)
+        }
+    })
+
+    
+</script>
+</html>
